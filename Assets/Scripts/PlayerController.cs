@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Boundary
-{
-    public float fXMin, fXMax, fZMin, fZMax;
-}
 public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
