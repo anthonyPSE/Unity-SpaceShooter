@@ -36,12 +36,12 @@ public class TouchMover : MonoBehaviour {
     void FixedUpdate()
     {
         //Make sure a touch event is happening
-        if (Input.GetMouseButton(0))
+        if (Input.touchCount > 0)
         {
+            Vector2 inputPosition = Input.GetTouch(0).position;
             //Build a ray from the touched point
             //Ignores multiple touches after the first
-            //Ray touchRay = camera.ScreenPointToRay(Input.GetTouch(0).position);
-            Ray touchRay = camera.ScreenPointToRay(Input.mousePosition);
+            Ray touchRay = camera.ScreenPointToRay(inputPosition);
 
             RaycastHit hit;
             if (Physics.Raycast(touchRay, out hit))
